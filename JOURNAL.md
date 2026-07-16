@@ -30,4 +30,5 @@ The issue is set in the service layer under core/services/. This is where the fu
   - Is tier-2, with an estimated effortof 4-6 hours. I would need to understand how the service modules work and what depends on these modules to write the most accurate docstring descriptions.
 - Realistic for my schedule?
   - Yes. I can reserve Thursdays and Fridays and the Weekends.
--
+- How does it align with my skill level?
+  - I am an intermediate level software engineer who has had experience adding onto pre-existing codebases, but I've not done much on the documentation/explanation process, where I need to let the reviewer know the why or what. The main fix would require me to find the right files, understand where it's referenced and depended on, and that helps me understand the bigger picture.
