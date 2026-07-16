@@ -11,10 +11,23 @@
 the title), what is currently broken or missing, and what a successful fix
 would accomplish. Naming the part of the codebase it affects is helpful context.]
 
-The issue is set in the service layer under core/services/. This is where the functions that mediate the API routes and database models are. Many of the functions are inconsistently documented, with the public functions either carrying only one-line docstrings (or none) without any structured account of their parameters, return values or failure modes.Without strong docstrings, the service layer is made more difficult to tell what the db expects, when a function returns "None" versus raising, or which operations can throw after a rollback. The fix is then to give each of the public functions a complete Google-styled docstring, a description including the Args taken, possible Returns, and Raises that reflect each function's actual behavior. A successful outcome is that the modules present in the directory read as self-documenting, with the Raises sections honestly distinguishing functions that genuinely raise from pure reads that only surface underlying database errors.
+The issue is set in the service layer under core/services/. This is where the functions that mediate the API routes and database models are. Many of the functions are inconsistently documented, with the public functions either carrying only one-line docstrings (or none) without any structured account of their parameters, return values or failure modes.Without strong docstrings, the service layer is made more difficult to tell what the db expects, when a function returns "None" versus raising, or which operations can throw after a rollback. The fix, and what would be considered "done" is then to give each of the public functions a complete Google-styled docstring, a description including the Args taken, possible Returns, and Raises that reflect each function's actual behavior. A successful outcome is that the modules present in the directory read as self-documenting, with the Raises sections honestly distinguishing functions that genuinely raise from pure reads that only surface underlying database errors.
 
 **Branch name:** 'origin/issue-119-missing-docstrings-in-services-directory'
 
 **Setup confirmation:** [X] App runs locally at localhost:5173
 
 **Cohort ledger:** [X] Issue added to cohort ledger
+
+**CheckList responses**:
+
+- Can I find the relevant code?
+  - The issue lists the files in question. Profile_service.py, review_service.py.
+  - Only issue is that I couldn't find anything for the notification_service.py
+- Blockers/dependencies:
+  - Despite not having found the notification_service.py, I would write it off as something that I can put aside, as I did a check of any files referencing the module and couldn't find anything. Most likely that whatever issue involving notification services were resolved indirectly in a different PR.
+- Tier realistic:
+  - Is tier-2, with an estimated effortof 4-6 hours. I would need to understand how the service modules work and what depends on these modules to write the most accurate docstring descriptions.
+- Realistic for my schedule?
+  - Yes. I can reserve Thursdays and Fridays and the Weekends.
+-
