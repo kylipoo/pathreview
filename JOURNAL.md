@@ -32,3 +32,19 @@ The issue is set in the service layer under core/services/, where the functions 
   - Yes. I can reserve Thursdays and Fridays and the Weekends.
 - How does it align with my skill level?
   - I am an intermediate level software engineer who has had experience adding onto pre-existing codebases, but I've not done much on the documentation/explanation process, where I need to let the reviewer know the why or what. The main fix would require me to find the right files, understand where it's referenced and depended on, and that helps me understand the bigger picture.
+
+viperkill420 user id: d20820e3-cc76-46a3-8016-21a6e242a5c1
+
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:** [link to commit documenting the reproduced issue]
+
+**Reproduction summary:**
+I opened core/services/profile_service.py and review_service.py and could confirm that as the original issue stated, that every public function is documented with only a one-line summary — no structured account of its parameters, return values, or failure conditions. To confirm the undocumented behaviors, I exercised the API and called get_profile directly, observing that: reads collapse "not found" and "not owned" into a silent None; create_profile can raise on commit without rolling back; and delete_profile re-raises after a rollback.
+
+**PLAN.md link:** [link to PLAN.md in your fork]
+
+**Walkthrough video (recommended):** (Not much to share here, is an issue of documentation).
+
+**Blockers or open questions:**
+[Anything you're still uncertain about going into Week 9, or leave blank]
